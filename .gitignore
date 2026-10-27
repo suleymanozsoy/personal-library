@@ -10,3 +10,6 @@ cmake-build-*/
 
 # Editor files
 .vscode/
+
+# macOS debug symbols
+*.dSYM/
