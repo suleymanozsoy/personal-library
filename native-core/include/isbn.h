@@ -4,7 +4,9 @@
 
 bool isbn13_is_valid(const char *isbn);
 
+bool isbn10_is_valid(const char *isbn);
 
+bool isbn10_to_isbn13(const char *isbn10, char isbn13[14]);
 
 
 #endif
