@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-Book *book_create(const char *title, int32_t total_pages){
+Book *book_create(const char *title, const char *author , int32_t total_pages){
 
     if(title == NULL || title[0] == '\0')
         return NULL;
@@ -26,6 +26,7 @@ Book *book_create(const char *title, int32_t total_pages){
         return NULL;
 
     }
+    
       
     strcpy(b1->title,title);
     
@@ -36,9 +37,21 @@ Book *book_create(const char *title, int32_t total_pages){
     b1->quantity=1;
     b1->status=UNREAD;
 
+    if (author != NULL && author[0] != '\0') {
 
+        b1->author = malloc(strlen(author)+1);
 
-    return b1;
+        if(b1->author==NULL){
+            book_destroy(b1);
+            return NULL;
+    }
+
+        strcpy(b1->author,author);
+
+}
+
+// Author yoksa da buraya ulaşılmalı.
+return b1;
 
 }
 
