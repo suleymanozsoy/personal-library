@@ -30,7 +30,7 @@ typedef struct
 
 } Book;
 
-Book *book_create(const char *title, const char *author, int32_t total_pages);
+Book *book_create(const char *title, const char *author, int32_t total_pages, const char *isbn);
 
 void book_destroy(Book *book);
 
