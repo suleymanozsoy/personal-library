@@ -13,3 +13,5 @@ cmake-build-*/
 
 # macOS debug symbols
 *.dSYM/
+
+/test_isbn
