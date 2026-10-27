@@ -137,3 +137,49 @@ bool isbn10_to_isbn13(const char *isbn10, char isbn13[14])
 
     return true;
 }
+
+bool isbn_normalize(const char *input, char normalized[14])
+{
+
+    if (input == NULL || normalized == NULL)
+        return false;
+
+    char compact[14];
+
+    int j = 0;
+
+    for (int i = 0; input[i] != '\0'; i++)
+    {
+
+        if (input[i] == ' ' || input[i] == '-')
+            continue;
+
+        if (j >= 13)
+            return false;
+
+        compact[j] = input[i];
+        j++;
+    }
+
+    compact[j]='\0';
+
+    if (j == 10)
+{
+   
+    return isbn10_to_isbn13(compact,normalized);
+    
+}
+
+    if(j==13){
+
+        if(isbn13_is_valid(compact)){
+            strcpy(normalized,compact);
+            return true;
+        }
+            return false;
+
+    }
+
+    return false;
+
+}
