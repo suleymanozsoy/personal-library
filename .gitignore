@@ -1,0 +1,12 @@
+# Compiled test executable
+/test_book
+
+# Build directories
+build/
+cmake-build-*/
+
+# macOS
+.DS_Store
+
+# Editor files
+.vscode/

@@ -2,15 +2,17 @@
 #define BOOK_H
 #include <stdint.h>
 
-typedef enum{
-  
+typedef enum
+{
+
     UNREAD,
     READİNG,
     FINISHED
 
-}   reading_status;
+} reading_status;
 
-typedef struct{
+typedef struct
+{
 
     int64_t book_id;
 
@@ -27,5 +29,9 @@ typedef struct{
     reading_status status;
 
 } Book;
+
+Book *book_create(const char *title, int32_t total_pages);
+
+void book_destroy(Book *book);
 
 #endif
